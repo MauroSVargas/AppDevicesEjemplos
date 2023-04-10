@@ -1,17 +1,55 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, TextInput, Button } from 'react-native'
+import { COLORS } from '../constants'
+import { useDispatch } from 'react-redux'
+import { addPlace } from '../store/places.actions'
+import ImageSelector from '../components/ImageSelector'
 
-const NewPlaceScreen = () => {
+
+const NewPlaceScreen = ({ navigation }) => {
+    const dispatch = useDispatch()
+    const [titleValue, setTitleValue] = React.useState('')
+    const [imageValue, setImageValue] = React.useState('')
+
+    const titleChangeHandler = text => {
+        setTitleValue(text)
+    }
+
+
+    const savePlaceHandler = () => {
+        dispatch(addPlace(titleValue,imageValue))
+        navigation.navigate('Direcciones')
+    }
+
+
     return (
-        <View style={styles.container}>
-            <Text>Nueva Direccion</Text>
-        </View>
+        <ScrollView>
+            <View style={styles.container}>
+                <Text style={styles.label}>Titulo</Text>
+                <TextInput style={styles.input} onChangeText={titleChangeHandler}/>
+                <ImageSelector onImage={image=>setImageValue(image)} />
+                <Button title="Guardar" color={COLORS.MAROON} onPress={savePlaceHandler} />
+            </View>
+           
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        margin: 30,
+    },
+    label: {
+        fontSize: 18,
+        marginBottom: 16
+    },
+    input: {
+        borderBottomColor: '#ccc',
+        borderBottomWidth: 1,
+        marginBottom: 16,
+        paddingHorizontal: 2,
+        paddingVertical: 4
     }
 })
 
