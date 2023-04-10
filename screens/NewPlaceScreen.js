@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, ScrollView, TextInput, Button } from 'react-nat
 import { COLORS } from '../constants'
 import { useDispatch } from 'react-redux'
 import { addPlace } from '../store/places.actions'
-import ImageSelector from '../components/ImageSelector'
+import ImageSelector from '../components/ImageSelector' 
 
 
 const NewPlaceScreen = ({ navigation }) => {
@@ -20,6 +20,9 @@ const NewPlaceScreen = ({ navigation }) => {
         dispatch(addPlace(titleValue,imageValue))
         navigation.navigate('Direcciones')
     }
+
+
+
 
 
     return (

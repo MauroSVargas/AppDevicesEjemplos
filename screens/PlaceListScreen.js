@@ -26,4 +26,6 @@ const PlaceListScreen = ({navigation}) => {
     )
 }
 
+
+
 export default PlaceListScreen
