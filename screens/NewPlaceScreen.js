@@ -22,9 +22,6 @@ const NewPlaceScreen = ({ navigation }) => {
     }
 
 
-
-
-
     return (
         <ScrollView>
             <View style={styles.container}>
