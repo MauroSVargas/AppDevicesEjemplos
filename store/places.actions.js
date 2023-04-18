@@ -1,5 +1,5 @@
 import * as FileSystem from 'expo-file-system'
-import STATIC_MAP_API_KEY from '../keys'
+import STATIC_MAP_API_KEY from '../keyExample'  
 import { insertAddress, fetchAddress } from '../db'
 
 export const ADD_PLACE = 'ADD_PLACE'

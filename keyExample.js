@@ -1,0 +1,1 @@
+const STATIC_MAP_API_KEY = 'AIzaSyDZkawM8n2pweaMVJh1q_dUqozdUY54Kpk';
